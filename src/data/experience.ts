@@ -13,6 +13,6 @@ export const experience: ExperienceItem[] = [
   {
     company: 'Ascentic',
     role: 'Software Engineer Intern',
-    period: 'Oct 2024 - Apr 2025 (Internship)',
+    period: 'Oct 2024 - Apr 2025',
   }
 ];
