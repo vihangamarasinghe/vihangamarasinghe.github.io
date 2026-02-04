@@ -15,8 +15,8 @@ const { items } = Astro.props;
       <article class="space-y-3">
         <div class="flex flex-col gap-2">
           <h3 class="text-lg font-semibold">{item.role}</h3>
-          <p>{item.company}</p>
-          <p class="text-sm leading-snug">{item.period}</p>
+          <p class="text-muted">{item.company}</p>
+          <p class="text-sm leading-snug text-muted">{item.period}</p>
         </div>
         <p>{item.summary}</p>
       </article>

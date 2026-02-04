@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #475569;
+  --color-border: #e2e8f0;
+  --color-accent: #0f766e;
+}
+
 @font-face {
   font-family: "Primary";
   src: url("/fonts/primary-regular.woff2") format("woff2");
