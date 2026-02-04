@@ -1,0 +1,16 @@
+---
+type Props = {
+  text: string[];
+};
+
+const { text } = Astro.props;
+---
+
+<section aria-labelledby="intro-heading" class="space-y-3">
+  <h2 id="intro-heading" class="text-xl font-semibold">Intro</h2>
+  <div class="space-y-3">
+    {text.map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </div>
+</section>

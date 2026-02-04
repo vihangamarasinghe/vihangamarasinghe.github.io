@@ -1,0 +1,25 @@
+---
+import type { ExperienceItem } from '../data/experience';
+
+type Props = {
+  items: ExperienceItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<section aria-labelledby="experience-heading" class="space-y-5">
+  <h2 id="experience-heading" class="text-xl font-semibold">Experience</h2>
+  <div class="flex flex-col gap-7">
+    {items.map((item) => (
+      <article class="space-y-3">
+        <div class="flex flex-col gap-2">
+          <h3 class="text-lg font-semibold">{item.role}</h3>
+          <p class="text-muted">{item.company}</p>
+          <p class="text-sm leading-snug text-muted">{item.period}</p>
+        </div>
+        <p>{item.summary}</p>
+      </article>
+    ))}
+  </div>
+</section>

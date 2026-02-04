@@ -1,0 +1,24 @@
+---
+import type { LinkItem } from '../data/links';
+
+type Props = {
+  links: LinkItem[];
+};
+
+const { links } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="space-y-4">
+  <h2 class="text-xl font-semibold">Contact</h2>
+  <ul class="flex flex-wrap gap-3">
+    {links.map((link) => (
+      <li>
+        <a href={link.href} class="text-accent underline underline-offset-4">
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="text-sm text-muted">© {year} Vihanga Marasinghe.</p>
+</footer>

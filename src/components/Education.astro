@@ -1,0 +1,31 @@
+---
+import type { EducationItem } from '../data/education';
+
+type Props = {
+  items: EducationItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<section aria-labelledby="education-heading" class="space-y-5">
+  <h2 id="education-heading" class="text-xl font-semibold">Education</h2>
+  <div class="flex flex-col gap-7">
+    {items.map((item) => (
+      <article class="space-y-3">
+        <div class="flex flex-col gap-2">
+          <h3 class="text-lg font-semibold">{item.degree}</h3>
+          <p class="text-muted">{item.institution}</p>
+          <p class="text-sm leading-snug text-muted">{item.graduation}</p>
+        </div>
+        {item.honors.length > 0 && (
+          <ul class="list-disc space-y-1 pl-5">
+            {item.honors.map((honor) => (
+              <li>{honor}</li>
+            ))}
+          </ul>
+        )}
+      </article>
+    ))}
+  </div>
+</section>

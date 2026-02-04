@@ -1,0 +1,38 @@
+---
+import type { ProjectItem } from '../data/projects';
+
+type Props = {
+  items: ProjectItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<section aria-labelledby="projects-heading" class="space-y-5">
+  <h2 id="projects-heading" class="text-xl font-semibold">Selected Projects</h2>
+  <div class="flex flex-col gap-7">
+    {items.map((project) => (
+      <article class="space-y-3">
+        <div class="flex flex-col gap-2">
+          <h3 class="text-lg font-semibold">
+            {project.href ? (
+              <a href={project.href} class="text-accent underline underline-offset-4">
+                {project.name}
+              </a>
+            ) : (
+              project.name
+            )}
+          </h3>
+          <p>{project.description}</p>
+        </div>
+        {project.highlights && project.highlights.length > 0 && (
+          <ul class="list-disc space-y-1 pl-5">
+            {project.highlights.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+      </article>
+    ))}
+  </div>
+</section>
