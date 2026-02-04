@@ -1,0 +1,27 @@
+---
+import type { LinkItem } from '../data/links';
+
+type Props = {
+  name: string;
+  role: string;
+  links: LinkItem[];
+};
+
+const { name, role, links } = Astro.props;
+---
+
+<header class="flex flex-col gap-3">
+  <div class="flex flex-col gap-1">
+    <h1>{name}</h1>
+    <p>{role}</p>
+  </div>
+  <nav aria-label="Primary">
+    <ul class="flex flex-wrap gap-4">
+      {links.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

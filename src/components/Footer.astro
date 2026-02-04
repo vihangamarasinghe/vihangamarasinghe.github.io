@@ -1,0 +1,20 @@
+---
+import type { LinkItem } from '../data/links';
+
+type Props = {
+  links: LinkItem[];
+};
+
+const { links } = Astro.props;
+---
+
+<footer class="space-y-3">
+  <h2>Contact</h2>
+  <ul class="flex flex-wrap gap-4">
+    {links.map((link) => (
+      <li>
+        <a href={link.href}>{link.label}</a>
+      </li>
+    ))}
+  </ul>
+</footer>

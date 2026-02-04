@@ -1,17 +1,28 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Intro from '../components/Intro.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Footer from '../components/Footer.astro';
 
+import { profile } from '../data/profile';
+import { links } from '../data/links';
+import { projects } from '../data/projects';
+import { experience } from '../data/experience';
+
+const headerLinks = links.filter((link) => link.kinds.includes('primary'));
+const footerLinks = links.filter((link) =>
+  link.kinds.some((kind) => kind === 'contact' || kind === 'resume')
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={`${profile.name} — ${profile.role}`} description={profile.intro}>
+  <main class="mx-auto flex w-full max-w-3xl flex-col gap-12 px-6 py-12">
+    <Header name={profile.name} role={profile.role} links={headerLinks} />
+    <Intro text={profile.intro} />
+    <Projects items={projects} />
+    <Experience items={experience} />
+    <Footer links={footerLinks} />
+  </main>
+</BaseLayout>
