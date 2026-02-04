@@ -18,7 +18,7 @@ const footerLinks = links.filter((link) =>
 ---
 
 <BaseLayout title={`${profile.name} — ${profile.role}`} description={profile.intro}>
-  <main class="mx-auto flex w-full max-w-3xl flex-col gap-12 px-6 py-12">
+  <main class="mx-auto flex w-full max-w-2xl flex-col gap-14 px-6 py-12 text-base leading-relaxed">
     <Header name={profile.name} role={profile.role} links={headerLinks} />
     <Intro text={profile.intro} />
     <Projects items={projects} />
