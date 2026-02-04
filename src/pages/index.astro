@@ -2,14 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Intro from '../components/Intro.astro';
-import Projects from '../components/Projects.astro';
 import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
 import Footer from '../components/Footer.astro';
 
 import { profile } from '../data/profile';
 import { links } from '../data/links';
-import { projects } from '../data/projects';
 import { experience } from '../data/experience';
+import { education } from '../data/education';
 
 const headerLinks = links.filter((link) => link.kinds.includes('primary'));
 const footerLinks = links.filter((link) =>
@@ -17,12 +17,12 @@ const footerLinks = links.filter((link) =>
 );
 ---
 
-<BaseLayout title={`${profile.name} — ${profile.role}`} description={profile.intro}>
+<BaseLayout title={`${profile.name} — ${profile.role}`} description={profile.intro[0]}>
   <main class="mx-auto flex w-full max-w-2xl flex-col gap-14 px-6 py-12 text-base leading-relaxed">
     <Header name={profile.name} role={profile.role} links={headerLinks} />
     <Intro text={profile.intro} />
-    <Projects items={projects} />
     <Experience items={experience} />
+    <Education items={education} />
     <Footer links={footerLinks} />
   </main>
 </BaseLayout>

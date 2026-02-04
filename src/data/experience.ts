@@ -2,20 +2,17 @@ export type ExperienceItem = {
   company: string;
   role: string;
   period: string;
-  summary: string;
+  summary?: string;
 };
-
 export const experience: ExperienceItem[] = [
   {
-    company: 'Company Name',
-    role: 'Role Title',
-    period: '2022 - Present',
-    summary: 'Brief summary of responsibilities, impact, or focus areas.'
+    company: 'Ascentic',
+    role: 'Associate Software Engineer',
+    period: 'Apr 2025 - Present (Full-time)',
   },
   {
-    company: 'Company Name',
-    role: 'Role Title',
-    period: '2019 - 2022',
-    summary: 'Brief summary of responsibilities, impact, or focus areas.'
+    company: 'Ascentic',
+    role: 'Software Engineer Intern',
+    period: 'Oct 2024 - Apr 2025 (Internship)',
   }
 ];
