@@ -6,6 +6,7 @@ type Props = {
 };
 
 const { links } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
 <footer class="space-y-4">
@@ -19,4 +20,5 @@ const { links } = Astro.props;
       </li>
     ))}
   </ul>
+  <p class="text-sm text-muted">© {year} Vihanga Marasinghe.</p>
 </footer>
