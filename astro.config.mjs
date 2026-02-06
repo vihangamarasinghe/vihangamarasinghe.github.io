@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://vihangamarasinghe.github.io',
+  site: 'https://vihangamarasinghe.com',
   vite: {
     plugins: [tailwindcss()]
   },

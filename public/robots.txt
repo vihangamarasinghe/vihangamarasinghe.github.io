@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vihangamarasinghe.com/sitemap-index.xml
