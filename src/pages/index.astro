@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Intro from '../components/Intro.astro';
 import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
+import MediumPosts from '../components/MediumPosts.astro';
 import Footer from '../components/Footer.astro';
 
 import profileImage from '../assets/profile.jpeg';
@@ -29,6 +30,7 @@ const footerLinks = links.filter((link) =>
       imageAlt={`${profile.name} headshot`}
     />
     <Intro text={profile.intro} />
+    <MediumPosts />
     <Experience items={experience} />
     <Education items={education} />
     <Footer links={footerLinks} />

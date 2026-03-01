@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "fetch:medium": "node scripts/fetch-medium.mjs",
+    "prebuild": "npm run fetch:medium",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -12,7 +14,8 @@
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.17.1",
+    "astro": "^5.18.0",
+    "rss-parser": "^3.13.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
   }
